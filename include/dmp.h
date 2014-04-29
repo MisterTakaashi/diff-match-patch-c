@@ -142,7 +142,7 @@ typedef int (*dmp_diff_callback)(
  *
  * Returns 0 on success, -1 on failure.
  */
-extern int dmp_options_init(dmp_options *opts); // TODO : ?
+extern int dmp_options_init(dmp_options *opts); // TODO : Cette fonction initialise la structure dmp_options pour les options de différents fonctions
 
 /**
  * Public: Calculate the diff between two texts.
@@ -171,7 +171,7 @@ extern int dmp_diff_new(
 	const char *text1,
 	uint32_t    len1,
 	const char *text2,
-	uint32_t    len2);  // TODO : ?
+	uint32_t    len2);  // TODO : Création d'un diff, elle semble etre intéressante à utiliser
 
 /**
  * Public: Generate diff from NUL-terminated strings.
@@ -197,7 +197,7 @@ extern int dmp_diff_from_strs(
 	dmp_diff **diff,
 	const dmp_options *options,
 	const char *text1,
-	const char *text2);  // TODO : ?
+	const char *text2);  // TODO : Semble faire la meme chose que le diff, mais ne prend que des string en argument
 
 /**
  * Public: Free the diff structure.
@@ -206,7 +206,7 @@ extern int dmp_diff_from_strs(
  *
  * diff - The `dmp_diff` object to be freed.
  */
-extern void dmp_diff_free(dmp_diff *diff);  // TODO : ?
+extern void dmp_diff_free(dmp_diff *diff);  // TODO : On libère la mémoire 
 
 /**
  * Public: Iterate over changes in a diff list.
@@ -223,7 +223,7 @@ extern void dmp_diff_free(dmp_diff *diff);  // TODO : ?
 extern int dmp_diff_foreach(
 	const dmp_diff *diff,
 	dmp_diff_callback cb,
-	void *cb_ref);  // TODO : ?
+	void *cb_ref);  // TODO : Foreeach pour parcourir les fichier ?
 
 /**
  * Public: Count the number of diff hunks.
@@ -235,17 +235,17 @@ extern int dmp_diff_foreach(
  *
  * Returns a count of the number of hunks in the diff.
  */
-extern uint32_t dmp_diff_hunks(const dmp_diff *diff);  // TODO : ?
+extern uint32_t dmp_diff_hunks(const dmp_diff *diff);  // TODO : Combien de fois l'itérateur a été appelé ?
 
-extern void dmp_diff_print_raw(FILE *fp, const dmp_diff *diff);  // TODO : ?
+extern void dmp_diff_print_raw(FILE *fp, const dmp_diff *diff);  // TODO : Fonction utilisée pour mettre en forme le texte avant ecriture dans une fichier
 
 extern int dmp_patch_new(
 	dmp_patch     **patch,
 	const char      *text1,
 	uint32_t         len1,
-	const dmp_diff *diff); // TODO : ?
+	const dmp_diff *diff);
 
-extern void dmp_patch_free(dmp_patch *patch);  // TODO : ?
+extern void dmp_patch_free(dmp_patch *patch);
 
 /*
  * Utility functions
