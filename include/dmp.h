@@ -142,7 +142,7 @@ typedef int (*dmp_diff_callback)(
  *
  * Returns 0 on success, -1 on failure.
  */
-extern int dmp_options_init(dmp_options *opts);
+extern int dmp_options_init(dmp_options *opts); // TODO : ?
 
 /**
  * Public: Calculate the diff between two texts.
@@ -171,7 +171,7 @@ extern int dmp_diff_new(
 	const char *text1,
 	uint32_t    len1,
 	const char *text2,
-	uint32_t    len2);
+	uint32_t    len2);  // TODO : ?
 
 /**
  * Public: Generate diff from NUL-terminated strings.
@@ -197,7 +197,7 @@ extern int dmp_diff_from_strs(
 	dmp_diff **diff,
 	const dmp_options *options,
 	const char *text1,
-	const char *text2);
+	const char *text2);  // TODO : ?
 
 /**
  * Public: Free the diff structure.
@@ -206,7 +206,7 @@ extern int dmp_diff_from_strs(
  *
  * diff - The `dmp_diff` object to be freed.
  */
-extern void dmp_diff_free(dmp_diff *diff);
+extern void dmp_diff_free(dmp_diff *diff);  // TODO : ?
 
 /**
  * Public: Iterate over changes in a diff list.
@@ -223,7 +223,7 @@ extern void dmp_diff_free(dmp_diff *diff);
 extern int dmp_diff_foreach(
 	const dmp_diff *diff,
 	dmp_diff_callback cb,
-	void *cb_ref);
+	void *cb_ref);  // TODO : ?
 
 /**
  * Public: Count the number of diff hunks.
@@ -235,41 +235,41 @@ extern int dmp_diff_foreach(
  *
  * Returns a count of the number of hunks in the diff.
  */
-extern uint32_t dmp_diff_hunks(const dmp_diff *diff);
+extern uint32_t dmp_diff_hunks(const dmp_diff *diff);  // TODO : ?
 
-extern void dmp_diff_print_raw(FILE *fp, const dmp_diff *diff);
+extern void dmp_diff_print_raw(FILE *fp, const dmp_diff *diff);  // TODO : ?
 
 extern int dmp_patch_new(
 	dmp_patch     **patch,
 	const char      *text1,
 	uint32_t         len1,
-	const dmp_diff *diff);
+	const dmp_diff *diff); // TODO : ?
 
-extern void dmp_patch_free(dmp_patch *patch);
+extern void dmp_patch_free(dmp_patch *patch);  // TODO : ?
 
 /*
  * Utility functions
  */
 
 extern uint32_t dmp_common_prefix(
-	const char *t1, uint32_t l1, const char *t2, uint32_t l2);
+	const char *t1, uint32_t l1, const char *t2, uint32_t l2); // TODO : ?
 
 extern uint32_t dmp_common_suffix(
-	const char *t1, uint32_t l1, const char *t2, uint32_t l2);
+	const char *t1, uint32_t l1, const char *t2, uint32_t l2); // TODO : ?
 
 extern int dmp_has_prefix(
-	const char *text, uint32_t tlen, const char *pfx, uint32_t plen);
+	const char *text, uint32_t tlen, const char *pfx, uint32_t plen); // TODO : ?
 
 extern int dmp_has_suffix(
-	const char *text, uint32_t tlen, const char *sfx, uint32_t slen);
+	const char *text, uint32_t tlen, const char *sfx, uint32_t slen); // TODO : ?
 
 extern int dmp_strcmp(
-	const char *t1, uint32_t l1, const char *t2, uint32_t l2);
+	const char *t1, uint32_t l1, const char *t2, uint32_t l2); // TODO : ?
 
 extern const char *dmp_strstr(
-	const char *haystack, uint32_t lh, const char *needle, uint32_t ln);
+	const char *haystack, uint32_t lh, const char *needle, uint32_t ln); // TODO : ?
 
 extern void dmp_build_texts_from_diff(
-	char **t1, uint32_t *l1, char **t2, uint32_t *l2, const dmp_diff *diff);
+	char **t1, uint32_t *l1, char **t2, uint32_t *l2, const dmp_diff *diff); // TODO : ?
 
 #endif
