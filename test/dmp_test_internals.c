@@ -1,7 +1,8 @@
 /**
  * dmp_test_internals.c
  *
- * Tests that include internal APIs of libdmp
+ * Tests d'inclusiond e la bibliothèque
+ *
  */
 
 #include "dmp_test.h"
