@@ -56,3 +56,8 @@ dmp_test: $(LIBNAME) include/dmp.h $(TESTSRCS)
 
 clean:
 	$(rm) -rf $(OBJS) $(LIBNAME) dmp_test *.dSYM
+    
+perso: diff
+
+diff: $(LIBNAME) include/dmp.h $(TESTSRCS)
+	$(CC) -o diff $(CFLAGS) $(TESTSRCS) -L. -ldmp
