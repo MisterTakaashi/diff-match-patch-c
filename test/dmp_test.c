@@ -16,7 +16,7 @@ int main(int argc, char **argv)
     fichiercomp = fopen("test2.txt", "r");
     
     FILE* fichiersortie = NULL;
-    fichiercomp = fopen("output.txt", "w");
+    fichiercomp = fopen("output.txt", "w+");
 
     printf("Diff en cours...\n");
     
@@ -27,15 +27,15 @@ int main(int argc, char **argv)
         fread(texte1, sizeof(char)*75, 1, fichier);
         fread(texte2, sizeof(char)*75, 1, fichiercomp);//sizeof(texte2)
         
-        printf("\n%s\n\n", texte1);
+        //printf("\n%s\n\n", texte1);
         
         // dmp_diff_from_strs(&diff, NULL, "Apples are a fruit.", "Bananas are also fruit.");
         dmp_diff_new(&diff, NULL, texte1, strlen(texte1), texte2, strlen(texte2));
         dmp_diff_print_raw(fichiercomp, diff); //stderr pour ecran
         dmp_diff_free(diff);
         
-        long tailleFichier = ftell(fichier);
-        printf("\nPosition pointeur du premier fichier: %ld \n", tailleFichier);
+        //long tailleFichier = ftell(fichier);
+        //printf("\nPosition pointeur du premier fichier: %ld \n", tailleFichier);
     }
     
     printf("\nDiff terminé !\n");
